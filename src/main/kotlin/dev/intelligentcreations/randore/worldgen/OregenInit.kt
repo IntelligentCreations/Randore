@@ -76,7 +76,7 @@ object OregenInit {
     private val END_RANDOM_ORE_CONFIGURED_FEATURE: ConfiguredFeature<*, *> = ConfiguredFeature(
         Feature.ORE, OreFeatureConfig(
             BlockMatchRuleTest(Blocks.END_STONE),
-            BlockInit.NETHER_RANDOM_ORE.defaultState,
+            BlockInit.END_RANDOM_ORE.defaultState,
             Randore.CONFIG.end_random_ore_vein_size
         )
     )
