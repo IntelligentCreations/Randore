@@ -6,11 +6,10 @@
   "name": "Rand'Ore",
   "description": "Simple random ore for Fabric.",
   "authors": [
-    "pkstDev",
-    "altasE"
+    "Flamarine"
   ],
 
-  "license": "MIT License",
+  "license": "MIT",
   "icon": "assets/randore/icon.png",
 
   "environment": "*",
@@ -18,16 +17,16 @@
     "main": [
       {
         "adapter": "kotlin",
-        "value": "dev.intelligentcreations.randore.Randore"
+        "value": "io.github.prismwork.randore.Randore"
       }
     ]
   },
 
   "depends": {
-    "fabricloader": ">=0.13.3",
+    "fabricloader": ">=0.14.24",
     "fabric": "*",
-    "minecraft": "1.18.x",
+    "minecraft": ">=1.20.2",
     "java": ">=17",
-    "fabric-language-kotlin": ">=1.7.1+kotlin.1.6.10"
+    "fabric-language-kotlin": ">=1.10.13+kotlin.1.9.20"
   }
 }

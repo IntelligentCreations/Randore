@@ -6,10 +6,10 @@ plugins {
 }
 
 group = property("maven_group")!!
-version = "${property("mod_version")}-mc${property("minecraft_version")}"
+version = "${property("mod_version")}+mc${property("minecraft_version")}"
 
 repositories {
-    maven("https://jitpack.io")
+    // maven("https://jitpack.io")
 }
 
 dependencies {
@@ -20,12 +20,11 @@ dependencies {
     modImplementation("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
 
-    include("com.github.Draylar.omega-config:omega-config-base:${property("omega_config_version")}")
-    modImplementation("com.github.Draylar.omega-config:omega-config-base:${property("omega_config_version")}")
+    // include("com.github.Draylar.omega-config:omega-config-base:${property("omega_config_version")}")
+    // modImplementation("com.github.Draylar.omega-config:omega-config-base:${property("omega_config_version")}")
 }
 
 tasks {
-
     processResources {
         inputs.property("version", project.version)
         filesMatching("fabric.mod.json") {
@@ -59,7 +58,6 @@ tasks {
     compileKotlin {
         kotlinOptions.jvmTarget = "17"
     }
-
 }
 
 java {
@@ -68,7 +66,3 @@ java {
     // If you remove this line, sources will not be generated.
     withSourcesJar()
 }
-
-
-
-// configure the maven publication

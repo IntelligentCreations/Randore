@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "randore:random_ore",
+    "randore:deepslate_random_ore",
+    "randore:nether_random_ore",
+    "randore:end_random_ore"
+  ]
+}

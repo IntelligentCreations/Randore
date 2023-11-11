@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#randore:random_ores",
+      "required": false
+    }
+  ]
+}
