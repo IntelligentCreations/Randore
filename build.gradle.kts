@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm")
     id("fabric-loom")
+    id("me.modmuss50.mod-publish-plugin") version "0.4.2"
     `maven-publish`
     java
 }
@@ -34,6 +35,27 @@ tasks {
 
     jar {
         from("LICENSE")
+    }
+
+    publishMods {
+        changelog = file("CHANGELOG.md").readText(Charsets.UTF_8)
+        type = STABLE
+        file.set(remapJar.get().archiveFile)
+        version.set("${project.version}")
+        displayName.set("[Fabric ${property("minecraft_version")}] ${property("mod_version")}")
+        modLoaders.addAll("fabric", "quilt")
+
+        modrinth {
+            accessToken = providers.environmentVariable("MODRINTH_API_KEY")
+            projectId = "PVN8P7kZ"
+            minecraftVersions.add("${property("minecraft_version")}")
+        }
+
+        curseforge {
+            accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+            projectId = "514716"
+            minecraftVersions.add("${property("minecraft_version")}")
+        }
     }
 
     publishing {
